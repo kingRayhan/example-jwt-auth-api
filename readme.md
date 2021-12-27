@@ -11,7 +11,7 @@ A dummy auth api for testing purposes.
 
 ### Credential
 
-```json
+```
 {
     "email": "example@example.com",
     "password: "password"
