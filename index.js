@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const routes = express.Router();
 const jwt = require("jsonwebtoken");
 const SECRET = "____secret____";
@@ -18,6 +19,8 @@ const user = {
 
 // body parser middleware
 app.use(express.json({ extended: false }));
+// cors middleware
+app.use(cors());
 
 const authMiddleware = (req, res, next) => {
   const authHeader = req.headers.authorization;
