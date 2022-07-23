@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const routes = express.Router();
 const jwt = require("jsonwebtoken");
-const SECRET = "secret";
+const SECRET = "____secret____";
 
 // ----------------- User -----------------
 const email = "example@example.com";
@@ -44,9 +44,17 @@ const authMiddleware = (req, res, next) => {
   next();
 };
 
-routes.get("/", (req, res) => {
+routes.get("/", (_, res) => {
   res.json({
-    message: "Hello World",
+    message: "Example jwt api is running",
+    repository: "https://github.com/kingRayhan/example-jwt-auth-api#readme",
+    author: {
+      name: "King Rayhan",
+      email: "rayhan.dev.bd@gmail.com",
+      github: "https://github.com/kingrayhan",
+      twitter: "https://twitter.com/rayhan095",
+      instagram: "https://www.instagram.com/king_rayhan/",
+    },
   });
 });
 
